@@ -1,0 +1,13 @@
+INSERT INTO users
+VALUES ('yashas', 'yashas', true);
+
+INSERT INTO users
+VALUES ('krishna', 'krishna', true);
+
+INSERT INTO authorities
+VALUES ('yashas', 'ROLE_ADMIN');
+
+INSERT INTO authorities
+VALUES ('krishna', 'ROLE_USER');
+
+

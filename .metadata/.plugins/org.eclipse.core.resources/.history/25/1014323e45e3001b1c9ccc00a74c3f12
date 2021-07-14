@@ -1,0 +1,14 @@
+# when using H2
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.username=sa
+#spring.datasource.password=password
+#spring.h2.console.enabled=true
+
+# when using custom	 database
+spring.datasource.url=jdbc:mysql://localhost:3306/security_jdbc
+spring.datasource.username=hbstudent
+spring.datasource.password=hbstudent
+
+
+spring.jpa.show-sql=true

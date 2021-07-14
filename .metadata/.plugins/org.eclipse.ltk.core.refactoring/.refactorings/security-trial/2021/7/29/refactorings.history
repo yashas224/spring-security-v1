@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.example.spring.securitytrial.config&apos; to &apos;spring-security-jdbc/src/main/java/com.example.spring.springsecurityjdbc&apos;&#x0D;&#x0A;- Original project: &apos;security-trial&apos;&#x0D;&#x0A;- Destination element: &apos;spring-security-jdbc/src/main/java/com.example.spring.springsecurityjdbc&apos;&#x0D;&#x0A;- Original element: &apos;security-trial/src/main/java/com.example.spring.securitytrial.config&apos;" description="Copy package" destination="=spring-security-jdbc/src\/main\/java&lt;com.example.spring.springsecurityjdbc" element1="/src\/main\/java&lt;com.example.spring.securitytrial.config" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1626087703865" version="1.0"/>
+</session>

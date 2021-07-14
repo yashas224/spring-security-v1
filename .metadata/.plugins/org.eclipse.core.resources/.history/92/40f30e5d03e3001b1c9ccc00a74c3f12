@@ -1,0 +1,5 @@
+package com.example.spring.springsecurityjdbc.entity;
+
+public class Users {
+
+}
