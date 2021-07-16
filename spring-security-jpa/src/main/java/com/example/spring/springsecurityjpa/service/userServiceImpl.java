@@ -5,9 +5,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,8 +18,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.example.spring.springsecurityjpa.entity.Client;
+import com.example.spring.springsecurityjpa.entity.Permission;
+import com.example.spring.springsecurityjpa.repositry.ClientRepositry;
+import com.example.spring.springsecurityjpa.repositry.PermissionRepositry;
+
 @Service
 public class userServiceImpl implements UserService {
+
 	// the credentials , sensitive data that is password is set null after
 	// authentication is done, to be on a safer side by the spring frameword
 	/*
@@ -27,8 +36,10 @@ public class userServiceImpl implements UserService {
 	 */
 
 	////////////////////////////////////////////////////////////////////////
+	
+	
 	// hard-coding to prove that UserdetailServce is not dependent on JPA
-	private static Map<String, UserDetails> userMap = new HashMap();
+/*	private static Map<String, UserDetails> userMap = new HashMap();
 
 	@PostConstruct
 	private void setUsers() {
@@ -42,7 +53,6 @@ public class userServiceImpl implements UserService {
 
 	}
 
-	////////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -58,6 +68,29 @@ public class userServiceImpl implements UserService {
 		}
 
 		return new User(usr.getUsername(), usr.getPassword(), list);
-	}
+	}*/
 
+	////////////////////////////////////////////////////////////////////////////
+
+	@Autowired
+	ClientRepositry clientRepositry;
+	
+	@Autowired
+	PermissionRepositry permissionRepositry;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserDetails user = null;
+		Client client = clientRepositry.getByclientId(username);
+		List<Permission> permission;
+		if (client != null) {
+			permission = permissionRepositry.getByclientId(username);
+			if (permission != null) {
+				List<GrantedAuthority> authorities = permission.stream()
+						.map(p -> new SimpleGrantedAuthority(p.getRole())).collect(Collectors.toList());
+				user = new User(username, client.getPassword(), authorities);
+			}
+		}
+		return user;
+	}
 }
