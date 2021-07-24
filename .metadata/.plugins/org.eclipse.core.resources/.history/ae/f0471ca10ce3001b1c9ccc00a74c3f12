@@ -1,3 +1,0 @@
-INSERT INTO users
-VALUES ('yashas', 'yashas', true);
-VALUES ('krishna', 'krishna', true);

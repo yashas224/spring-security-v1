@@ -1,5 +1,0 @@
-package com.example.spring.springsecurityjdbc.controller;
-
-public class HomeController {
-
-}
