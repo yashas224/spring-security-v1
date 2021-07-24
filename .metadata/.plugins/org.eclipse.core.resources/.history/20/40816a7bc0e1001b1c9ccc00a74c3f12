@@ -1,5 +1,0 @@
-package com.example.spring.securitytrial.config;
-
-public class SecurityConfiguration {
-
-}
