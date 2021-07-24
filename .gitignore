@@ -3,3 +3,4 @@
 .metadata/.plugins/**
 .metadata/.log
 .metadata/version.ini
+*.xmi
