@@ -43,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
          .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		 
 		 
-		 // maming sure the filter we added is triggred before other security filter
+		 // making sure the filter we added is triggred before other security filter
 		   http.addFilterBefore(
 				   jwtRequestFilter,
 		            UsernamePasswordAuthenticationFilter.class
