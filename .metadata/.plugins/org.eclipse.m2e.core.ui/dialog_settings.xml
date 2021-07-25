@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\spring-security-v1\spring-security-facebook-logn"/>
 			<item value="E:\spring-security-v1\spring-security-jwt"/>
 			<item value="E:\spring-security-v1\security-trial"/>
 		</list>
