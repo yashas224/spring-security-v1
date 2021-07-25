@@ -1,6 +1,8 @@
 /.metadata/
 /.recommenders/
 .metadata/.plugins/**
-.metadata/.log
+.metadata/**
 .metadata/version.ini
 *.xmi
+.metadata/.log
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
